@@ -25,3 +25,16 @@ def addValuesForAttribute(charList, name, attr, val):
 	attr_dict[attr] = attr_vals
 	charList[name] = attr_dict
 	return charList
+	
+def charMember(charList, name):
+	if name in charList:
+		return True
+	else:
+		return False
+		
+def attrMember(charList, name, attr):
+	attr_dict = charList[name]
+	if attr in attr_dict:
+		return True
+	else:
+		return False
