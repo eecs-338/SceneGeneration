@@ -25,7 +25,7 @@ for l in script_lines:
             if w.isupper():
                 name.append(w)
         if len(name) > 1:
-            name = " ".join(name).replace(',', 's')
+            name = " ".join(name).replace(',', ' ')
             # create dictionary of information
             name_dict[name] = {}
             print (name)
