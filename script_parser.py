@@ -12,13 +12,23 @@ for l in lines:
     script_lines.append(str(l).strip())
     print (str(l).strip())
 
+
+# add names to dict
+
+name_dict = {}
 for l in script_lines:
     words = l.split(' ')
     name = []
-    for w in words:
-        w = w.strip()
-        if w.isupper():
-            name.append(w)
-    if len(name) > 1:
-        name = " ".join(name).replace(',', '')
-        print (name)
+    if "EXT." not in l and "INT." not in l:
+        for w in words:
+            w = w.strip()
+            if w.isupper():
+                name.append(w)
+        if len(name) > 1:
+            name = " ".join(name).replace(',', 's')
+            # create dictionary of information
+            name_dict[name] = {}
+            print (name)
+
+
+# valid people to talk ALL
