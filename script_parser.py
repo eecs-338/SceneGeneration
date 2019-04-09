@@ -3,6 +3,7 @@ import re
 import nltk
 from nltk.corpus import stopwords
 import numpy as np
+import charData as cd
 
 
 script_lines = []
@@ -15,7 +16,7 @@ for l in lines:
 
 # add names to dict
 
-name_dict = {}
+name_dict = cd.newCharList()
 for l in script_lines:
     words = l.split(' ')
     name = []
@@ -27,8 +28,10 @@ for l in script_lines:
         if len(name) > 1:
             name = " ".join(name).replace(',', '')
             # create dictionary of information
-            name_dict[name] = {}
+            cd.newChar(name_dict, name)
             print (name)
 
 
 # valid people to talk ALL
+
+print(name_dict)

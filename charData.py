@@ -8,7 +8,7 @@ def newChar(charList, name):
 
 def addAttribute(charList, name, attr):
 	attr_dict = charList[name]
-	attr_dict.[attr] = []
+	attr_dict[attr] = []
 	charList[name] = attr_dict
 	return charList
 
