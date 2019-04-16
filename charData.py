@@ -38,3 +38,24 @@ def attrMember(charList, name, attr):
 		return True
 	else:
 		return False
+		
+def inheritAttributes(charList, parent, child):
+	p_attr_dict = charList[parent]
+	c_attr_dict = charList[child]
+	
+	for attr, vals in p_attr_dict:
+		if attr in c_attr_dict:
+			attr_vals = c_attr_dict[attr]
+			attr_vals = flatAppend(attr_vals, vals)
+			c_attr_dict[attr] = attr_vals
+		else:
+			c_attr_dict[attr] = vals
+	
+	charList[child] = c_attr_dict
+	return charList
+
+
+def flatAppend(lst1, lst2):
+	for e in lst2:
+		lst1.append(e)
+	return lst1
