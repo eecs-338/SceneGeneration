@@ -43,7 +43,7 @@ def inheritAttributes(charList, parent, child):
 	p_attr_dict = charList[parent]
 	c_attr_dict = charList[child]
 	
-	for attr, vals in p_attr_dict:
+	for attr, vals in p_attr_dict.items():
 		if attr in c_attr_dict:
 			attr_vals = c_attr_dict[attr]
 			attr_vals = flatAppend(attr_vals, vals)
