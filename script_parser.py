@@ -35,3 +35,21 @@ for l in script_lines:
 # valid people to talk ALL
 
 print(name_dict)
+
+def findNames(script_lines):
+	name_dict = cd.newCharList()
+	for l in script_lines:
+		words = l.split(' ')
+		name = []
+		if "EXT." not in l and "INT." not in l:
+			for w in words:
+				w = w.strip()
+				if w.isupper():
+					name.append(w)
+			if len(name) > 1:
+				name = " ".join(name).replace(',', '')
+				# create dictionary of information
+				cd.newChar(name_dict, name)
+				print (name)
+	return name_dict
+	
